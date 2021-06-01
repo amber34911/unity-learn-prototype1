@@ -7,20 +7,10 @@ public class CameraSwitch : MonoBehaviour
     public Camera firstPersonCamera;
     public Camera overheadCamera;
 
-    private void Update()
+    public void Toggle()
     {
-        if (Input.GetButtonDown("SwitchCamera"))
-        {
-            if (firstPersonCamera.isActiveAndEnabled)
-            {
-                firstPersonCamera.enabled = false;
-                overheadCamera.enabled = true;
-            }
-            else
-            {
-                firstPersonCamera.enabled = true;
-                overheadCamera.enabled = false;
-            }
-        }
+        
+        firstPersonCamera.enabled = !firstPersonCamera.isActiveAndEnabled;
+        overheadCamera.enabled = !overheadCamera.isActiveAndEnabled;
     }
 }
